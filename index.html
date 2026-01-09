@@ -55,7 +55,7 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             z-index: 100;
-            padding: 20px 0;
+            padding: 2px 0;
         }
 
         .nav-content {
@@ -65,14 +65,16 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
+            height: 100px;
+            overflow: visible;
         }
 
         .logo {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--azul-oscuro);
-            letter-spacing: -0.5px;
+            height: 310px;
+            width: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 10;
         }
 
         .nav-cta {
@@ -96,7 +98,7 @@
         .hero {
             background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--lila) 100%);
             color: white;
-            padding: 120px 0 100px;
+            padding: 50px 0 50px;
             position: relative;
             overflow: hidden;
         }
@@ -147,7 +149,7 @@
 
         .hero h1 {
             font-family: 'Libre Baskerville', serif;
-            font-size: 64px;
+            font-size: 58px;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -156,9 +158,9 @@
         }
 
         .hero-subtitle {
-            font-size: 22px;
+            font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             max-width: 700px;
             opacity: 0.95;
             font-weight: 300;
@@ -758,6 +760,14 @@
             .credenciales {
                 grid-template-columns: 1fr;
             }
+
+            .logo {
+                height: 200px;
+            }
+
+            .nav-content {
+                height: 80px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -807,6 +817,24 @@
             .diferenciadores-grid {
                 grid-template-columns: 1fr;
             }
+
+            .logo {
+                height: 150px;
+            }
+
+            .nav-content {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 100px;
+            }
+
+            .nav-content {
+                height: 50px;
+            }
         }
     </style>
 </head>
@@ -815,7 +843,9 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">Seguridad Integral Hub</div>
+            <a href="#" style="line-height: 0;">
+                <img src="resources/LOGO.png" alt="Seguridad Integral Hub" class="logo">
+            </a>
             <a href="#diagnostico" class="nav-cta">Solicitar Diagnóstico</a>
         </div>
     </nav>
