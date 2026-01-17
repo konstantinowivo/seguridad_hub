@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-oscuro: #1E3A8A;
+  --azul-medio: #3B82F6;
+  --azul-claro: #60A5FA;
+  --celeste: #7DD3FC;
+  --lila: #8B5CF6;
+  --lila-claro: #A78BFA;
+  --text: #1A1A1A;
+  --text-light: #525252;
+  --bg: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --border: #E7E5E4;
+}
+
+body {
+  font-family: 'Libre Franklin', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--azul-claro);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-medio);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

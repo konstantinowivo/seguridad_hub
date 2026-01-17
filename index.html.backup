@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Integral Hub - Laura Daniela Florido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-oscuro: #1E3A8A;
+            --azul-medio: #3B82F6;
+            --azul-claro: #60A5FA;
+            --celeste: #7DD3FC;
+            --lila: #8B5CF6;
+            --lila-claro: #A78BFA;
+            --text: #1A1A1A;
+            --text-light: #525252;
+            --bg: #FAFAF9;
+            --bg-card: #FFFFFF;
+            --border: #E7E5E4;
+        }
+
+        body {
+            font-family: 'Libre Franklin', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 249, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 2px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 100px;
+            overflow: visible;
+        }
+
+        .logo {
+            height: 310px;
+            width: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-cta {
+            background: var(--azul-medio);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--azul-oscuro);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--lila) 100%);
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 900px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--azul-oscuro);
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* PROBLEMA */
+        .problema {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .problema-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problema-content h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text);
+            letter-spacing: -1px;
+        }
+
+        .problema-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .problema-list {
+            margin-top: 32px;
+        }
+
+        .problema-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--lila);
+        }
+
+        .problema-item::before {
+            content: '✓';
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--lila);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .problema-item-text {
+            font-size: 16px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* SERVICIOS */
+        .servicios {
+            background: var(--bg);
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--azul-medio) 0%, var(--lila) 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text);
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .servicio-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--azul-medio) 0%, var(--celeste) 50%, var(--lila) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .servicio-card.destacado {
+            border-color: var(--azul-medio);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+
+        .servicio-card.destacado::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--azul-medio);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-titulo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .servicio-descripcion {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .badge-destacado {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--azul-medio) 0%, var(--lila) 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 16px;
+        }
+
+        /* PROCESO */
+        .proceso {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .proceso-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding: 0 24px;
+        }
+
+        .step {
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .step-number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--lila-claro) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .step-titulo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--text);
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-descripcion {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* SOBRE LAURA */
+        .sobre-laura {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--lila) 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sobre-laura::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sobre-imagen {
+            aspect-ratio: 4/5;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            border: 3px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .sobre-content h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 42px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .sobre-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .credenciales {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .credencial {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .credencial::before {
+            content: '★';
+            flex-shrink: 0;
+            font-size: 20px;
+            color: var(--celeste);
+        }
+
+        .credencial-text {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* DIFERENCIADORES */
+        .diferenciadores {
+            background: var(--bg);
+            padding: 100px 0;
+        }
+
+        .diferenciadores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding: 0 24px;
+        }
+
+        .diferenciador {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .diferenciador:hover {
+            border-color: var(--azul-medio);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+
+        .diferenciador-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--azul-medio) 0%, var(--lila) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .diferenciador h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .diferenciador p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        /* FORMULARIO */
+        .cta-form {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 48px auto 0;
+            padding: 0 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            grid-column: span 2;
+        }
+
+        .form-group.half {
+            grid-column: span 1;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--azul-medio);
+            background: white;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--azul-medio) 0%, var(--lila) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-privacy {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .contacto-directo {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .contacto-item:hover {
+            border-color: var(--azul-medio);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--azul-oscuro);
+            color: white;
+            padding: 48px 0 32px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            opacity: 0.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 14px;
+        }
+
+        .footer-contact a:hover {
+            opacity: 1;
+        }
+
+        .footer-legal {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .problema-grid,
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .credenciales {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                height: 200px;
+            }
+
+            .nav-content {
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2,
+            .problema-content h2 {
+                font-size: 36px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.half {
+                grid-column: span 1;
+            }
+
+            .proceso-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .diferenciadores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                height: 150px;
+            }
+
+            .nav-content {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 100px;
+            }
+
+            .nav-content {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" style="line-height: 0;">
+                <img src="resources/LOGO.png" alt="Seguridad Integral Hub" class="logo">
+            </a>
+            <a href="#diagnostico" class="nav-cta">Solicitar Diagnóstico</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">✓ Consultoría Especializada</span>
+            <h1>
+                Protegé tu institución<br>
+                con seguridad real
+            </h1>
+            <p class="hero-subtitle">
+                Diagnóstico profesional, protocolos actualizados y acompañamiento técnico para instituciones que necesitan prevenir riesgos y fortalecer su seguridad.
+            </p>
+            <div class="hero-ctas">
+                <a href="#diagnostico" class="btn-primary">
+                    Solicitar Diagnóstico Inicial →
+                </a>
+                <a href="#servicios" class="btn-secondary">
+                    Ver Todos los Servicios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="problema">
+        <div class="container">
+            <div class="problema-grid">
+                <div class="problema-content">
+                    <h2>
+                        ¿Tu institución está realmente preparada?
+                    </h2>
+                    <p>
+                        La improvisación en seguridad tiene costos: exposición legal, riesgos operativos y falta de respaldo ante situaciones críticas.
+                    </p>
+                    <p>
+                        Las instituciones que trabajan con personas —especialmente con niños, niñas y adolescentes— necesitan protocolos claros, equipos capacitados y estrategias preventivas reales.
+                    </p>
+                </div>
+                
+                <div class="problema-list">
+                    <div class="problema-item">
+                        <span class="problema-item-text">
+                            Falta de protocolos actualizados o inexistencia de procedimientos claros
+                        </span>
+                    </div>
+                    <div class="problema-item">
+                        <span class="problema-item-text">
+                            Equipos sin formación en prevención de violencias, grooming o delitos digitales
+                        </span>
+                    </div>
+                    <div class="problema-item">
+                        <span class="problema-item-text">
+                            Riesgos legales por actuaciones sin respaldo normativo
+                        </span>
+                    </div>
+                    <div class="problema-item">
+                        <span class="problema-item-text">
+                            Ausencia de cultura preventiva y dependencia de soluciones reactivas
+                        </span>
+                    </div>
+                    <div class="problema-item">
+                        <span class="problema-item-text">
+                            Desconocimiento de cómo actuar ante situaciones de vulnerabilidad
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+        <div class="section-header">
+            <span class="section-tag">NUESTROS SERVICIOS</span>
+            <h2>Soluciones integrales para tu institución</h2>
+            <p>
+                Elegí el servicio que necesitás o comenzá con un Diagnóstico Inicial para identificar prioridades
+            </p>
+        </div>
+        <div class="servicios-grid">
+            <div class="servicio-card destacado">
+                <h3 class="servicio-titulo">Diagnóstico Integral</h3>
+                <p class="servicio-descripcion">
+                    Evaluación profesional de riesgos y vulnerabilidades. Punto de partida ideal para fortalecer la seguridad institucional.
+                </p>
+                <span class="badge-destacado">✓ Punto de partida ideal</span>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Auditoría de Seguridad</h3>
+                <p class="servicio-descripcion">
+                    Análisis técnico profundo del sistema de seguridad. Matriz de riesgos y plan de mejora a corto, mediano y largo plazo.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Diseño de Protocolos</h3>
+                <p class="servicio-descripcion">
+                    Protocolos de actuación y prevención. Reducí riesgos legales y fortalecé la responsabilidad operativa.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Capacitación Profesional</h3>
+                <p class="servicio-descripcion">
+                    Formación presencial, virtual o asincrónica. Temáticas: grooming, violencias, seguridad ciudadana, prevención.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Abordaje de Riesgos Sociales</h3>
+                <p class="servicio-descripcion">
+                    Prevención especializada frente a delitos complejos. Detección temprana y fortalecimiento institucional.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Seguridad Digital</h3>
+                <p class="servicio-descripcion">
+                    Reducción de riesgos tecnológicos. Cultura preventiva digital para instituciones que trabajan con NNyA.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Asesoría Estratégica</h3>
+                <p class="servicio-descripcion">
+                    Acompañamiento técnico para toma de decisiones. Orientación profesional sin necesidad de auditoría completa.
+                </p>
+            </div>
+
+            <div class="servicio-card">
+                <h3 class="servicio-titulo">Seguimiento Continuo</h3>
+                <p class="servicio-descripcion">
+                    Garantizá la implementación sostenida. Asistencia ante emergencias y actualización periódica de medidas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="proceso">
+        <div class="section-header">
+            <span class="section-tag">CÓMO TRABAJAMOS</span>
+            <h2>Proceso claro y profesional</h2>
+            <p>Un método probado para resultados concretos</p>
+        </div>
+        <div class="proceso-steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3 class="step-titulo">Diagnóstico Inicial</h3>
+                <p class="step-descripcion">
+                    Evaluamos tu institución: necesidades, riesgos visibles y áreas de mejora prioritarias.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3 class="step-titulo">Evaluación de Riesgos</h3>
+                <p class="step-descripcion">
+                    Identificamos vulnerabilidades físicas, organizacionales y sociales con enfoque técnico.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3 class="step-titulo">Plan de Acción</h3>
+                <p class="step-descripcion">
+                    Diseñamos protocolos, capacitaciones y estrategias preventivas adaptadas a tu contexto.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3 class="step-titulo">Implementación</h3>
+                <p class="step-descripcion">
+                    Acompañamos la puesta en marcha con capacitaciones y asesoría permanente.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">05</div>
+                <h3 class="step-titulo">Seguimiento</h3>
+                <p class="step-descripcion">
+                    Garantizamos sostenibilidad con revisiones periódicas y asistencia ante emergencias.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE LAURA -->
+    <section class="sobre-laura">
+        <div class="sobre-grid">
+            <div class="sobre-imagen">
+                [Foto profesional de Laura]
+            </div>
+            <div class="sobre-content">
+                <h2>Laura Daniela Florido</h2>
+                <p>
+                    Técnica Universitaria en Seguridad Ciudadana, especializada en seguridad interior y narcotráfico, con formación continua en ciudadanía digital y delitos contra las infancias.
+                </p>
+                <p>
+                    Mi diferencial profesional es la capacidad de ver lo que otros no ven: anticipo riesgos, diseño soluciones completas y creo estrategias de prevención, protección y gestión integral.
+                </p>
+                <div class="credenciales">
+                    <div class="credencial">
+                        <span class="credencial-text">Especialista en Seguridad y Narcotráfico</span>
+                    </div>
+                    <div class="credencial">
+                        <span class="credencial-text">Formación en Grooming y Delitos Digitales</span>
+                    </div>
+                    <div class="credencial">
+                        <span class="credencial-text">Prevención Comunitaria</span>
+                    </div>
+                    <div class="credencial">
+                        <span class="credencial-text">Diseño Estratégico en Seguridad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIADORES -->
+    <section class="diferenciadores">
+        <div class="section-header">
+            <span class="section-tag">¿POR QUÉ ELEGIRNOS?</span>
+            <h2>Enfoque integral y preventivo</h2>
+        </div>
+        <div class="diferenciadores-grid">
+            <div class="diferenciador">
+                <div class="diferenciador-icon">🛡️</div>
+                <h3>Enfoque Preventivo</h3>
+                <p>
+                    No esperamos a que ocurra el problema. Anticipamos riesgos y construimos estrategias sostenibles.
+                </p>
+            </div>
+            <div class="diferenciador">
+                <div class="diferenciador-icon">📋</div>
+                <h3>Base Legal Sólida</h3>
+                <p>
+                    Todos nuestros protocolos y recomendaciones están alineados con normativa vigente y mejores prácticas.
+                </p>
+            </div>
+            <div class="diferenciador">
+                <div class="diferenciador-icon">👥</div>
+                <h3>Perspectiva Humana</h3>
+                <p>
+                    Enfoque en derechos humanos, lenguaje claro y soluciones realistas adaptadas a cada contexto.
+                </p>
+            </div>
+            <div class="diferenciador">
+                <div class="diferenciador-icon">✓</div>
+                <h3>Experiencia Técnica</h3>
+                <p>
+                    Años de trabajo en seguridad ciudadana, riesgos sociales y temas sensibles complejos.
+                </p>
+            </div>
+            <div class="diferenciador">
+                <div class="diferenciador-icon">⭐</div>
+                <h3>Soluciones a Medida</h3>
+                <p>
+                    No usamos plantillas genéricas. Cada diagnóstico y protocolo es diseñado para tu institución específica.
+                </p>
+            </div>
+            <div class="diferenciador">
+                <div class="diferenciador-icon">🔄</div>
+                <h3>Acompañamiento Continuo</h3>
+                <p>
+                    No te dejamos solo después de la entrega. Ofrecemos seguimiento y asesoría permanente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="cta-form" id="diagnostico">
+        <div class="section-header">
+            <span class="section-tag">EMPEZÁ HOY</span>
+            <h2>Solicitá tu Diagnóstico Inicial</h2>
+            <p>
+                Evaluamos tu institución y te entregamos un informe con recomendaciones priorizadas. Punto de partida ideal para fortalecer tu seguridad.
+            </p>
+        </div>
+
+        <form class="form-container">
+            <div class="form-grid">
+                <div class="form-group half">
+                    <label class="form-label">Nombre completo *</label>
+                    <input type="text" class="form-input" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group half">
+                    <label class="form-label">Institución *</label>
+                    <input type="text" class="form-input" placeholder="Nombre de la institución" required>
+                </div>
+                <div class="form-group half">
+                    <label class="form-label">Email *</label>
+                    <input type="email" class="form-input" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group half">
+                    <label class="form-label">Teléfono *</label>
+                    <input type="tel" class="form-input" placeholder="+54 9 280 400-1045" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contanos brevemente tu situación</label>
+                    <textarea class="form-textarea" placeholder="¿Qué te preocupa? ¿Qué necesita tu institución? (Opcional)"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="form-submit">
+                Solicitar Diagnóstico Inicial →
+            </button>
+
+            <p class="form-privacy">
+                Al enviar este formulario, aceptás que nos contactemos para coordinar tu diagnóstico.
+                Tus datos están protegidos y no serán compartidos con terceros.
+            </p>
+        </form>
+
+        <div class="contacto-directo">
+            <a href="https://wa.me/5492804001045" class="contacto-item" target="_blank">
+                💬 WhatsApp
+            </a>
+            <a href="tel:+5492804001045" class="contacto-item">
+                📞 +54 9 280 400-1045
+            </a>
+            <a href="mailto:danielaflorido47@gmail.com" class="contacto-item">
+                ✉️ Email
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Seguridad Integral Hub</div>
+            <p class="footer-text">
+                Consultoría especializada en seguridad integral para instituciones, municipios y organizaciones.
+            </p>
+            <div class="footer-contact">
+                <a href="mailto:danielaflorido47@gmail.com">danielaflorido47@gmail.com</a>
+                <a href="tel:+5492804001045">+54 9 280 400-1045</a>
+                <a href="https://www.linkedin.com/in/laura-daniela-florido" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-legal">
+                © 2025 Seguridad Integral Hub - Laura Daniela Florido. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
