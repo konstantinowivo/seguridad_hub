@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm create:*)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Read(//c/Users/PC/Desktop/development_jobs/AGHR_proyect/**)"
     ],
     "deny": [],
     "ask": []

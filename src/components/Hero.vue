@@ -34,7 +34,7 @@
 .hero {
   background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--lila) 100%);
   color: white;
-  padding: 120px 0 100px;
+  padding: 31px 0 90px;
   position: relative;
   overflow: hidden;
 }
@@ -198,7 +198,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 60px;
+    padding: 20px 0 50px;
   }
 
   .hero h1 {

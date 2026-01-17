@@ -9,6 +9,7 @@
     <Diferenciadores />
     <CtaForm />
     <Footer />
+    <FloatingButtons />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import SobreLaura from './components/SobreLaura.vue'
 import Diferenciadores from './components/Diferenciadores.vue'
 import CtaForm from './components/CtaForm.vue'
 import Footer from './components/Footer.vue'
+import FloatingButtons from './components/layout/FloatingButtons.vue'
 </script>
 
 <style>
