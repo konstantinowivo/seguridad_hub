@@ -42,17 +42,6 @@
       </p>
     </form>
 
-    <div class="contacto-directo">
-      <a href="https://wa.me/5492804001045" class="contacto-item" target="_blank">
-        💬 WhatsApp
-      </a>
-      <a href="tel:+5492804001045" class="contacto-item">
-        📞 +54 9 280 400-1045
-      </a>
-      <a href="mailto:danielaflorido47@gmail.com" class="contacto-item">
-        ✉️ Email
-      </a>
-    </div>
   </section>
 </template>
 
