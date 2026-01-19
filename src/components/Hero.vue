@@ -188,11 +188,7 @@
   }
 
   .hero-logo {
-    order: -1;
-  }
-
-  .hero-logo img {
-    max-width: 400px;
+    display: none;
   }
 }
 

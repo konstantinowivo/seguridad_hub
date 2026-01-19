@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm create:*)",
       "Bash(npm install)",
-      "Read(//c/Users/PC/Desktop/development_jobs/AGHR_proyect/**)"
+      "Read(//c/Users/PC/Desktop/development_jobs/AGHR_proyect/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

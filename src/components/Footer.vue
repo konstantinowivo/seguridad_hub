@@ -11,7 +11,7 @@
         <a href="https://www.linkedin.com/in/laura-daniela-florido" target="_blank">LinkedIn</a>
       </div>
       <div class="footer-legal">
-        © 2025 Seguridad Integral Hub - Laura Daniela Florido. Todos los derechos reservados.
+        © 2026 Seguridad Integral Hub - Laura Daniela Florido. Todos los derechos reservados.
       </div>
     </div>
   </footer>
