@@ -4,7 +4,8 @@
       "Bash(npm create:*)",
       "Bash(npm install)",
       "Read(//c/Users/PC/Desktop/development_jobs/AGHR_proyect/**)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
