@@ -6,12 +6,12 @@
         Consultoría especializada en seguridad integral para instituciones, municipios y organizaciones.
       </p>
       <div class="footer-contact">
-        <a href="mailto:danielaflorido47@gmail.com">danielaflorido47@gmail.com</a>
+        <a href="mailto:info@seguridadintegralhub.com">info@seguridadintegralhub.com</a>
         <a href="tel:+5492804001045">+54 9 280 400-1045</a>
         <a href="https://www.linkedin.com/in/laura-daniela-florido" target="_blank">LinkedIn</a>
       </div>
       <div class="footer-legal">
-        © 2025 Seguridad Integral Hub - Laura Daniela Florido. Todos los derechos reservados.
+        © 2026 Seguridad Integral Hub - Laura Daniela Florido. Todos los derechos reservados.
       </div>
     </div>
   </footer>

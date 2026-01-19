@@ -32,8 +32,9 @@
         </div>
       </div>
 
-      <button type="submit" class="form-submit">
-        Solicitar Diagnóstico Inicial →
+      <button type="submit" class="form-submit" :disabled="isLoading">
+        <span v-if="!isLoading">Solicitar Diagnóstico Inicial →</span>
+        <span v-else>Enviando...</span>
       </button>
 
       <p class="form-privacy">
@@ -42,22 +43,12 @@
       </p>
     </form>
 
-    <div class="contacto-directo">
-      <a href="https://wa.me/5492804001045" class="contacto-item" target="_blank">
-        💬 WhatsApp
-      </a>
-      <a href="tel:+5492804001045" class="contacto-item">
-        📞 +54 9 280 400-1045
-      </a>
-      <a href="mailto:danielaflorido47@gmail.com" class="contacto-item">
-        ✉️ Email
-      </a>
-    </div>
   </section>
 </template>
 
 <script setup>
 import { reactive } from 'vue'
+import { useEmailService } from '../composables/useEmailService'
 
 const formData = reactive({
   nombre: '',
@@ -67,10 +58,23 @@ const formData = reactive({
   mensaje: ''
 })
 
-const handleSubmit = () => {
-  // Aquí puedes agregar la lógica de envío del formulario
-  console.log('Form submitted:', formData)
-  alert('Formulario enviado. Nos pondremos en contacto pronto.')
+const { sendEmail, isLoading, error, success } = useEmailService()
+
+const handleSubmit = async () => {
+  const emailSent = await sendEmail(formData)
+
+  if (emailSent) {
+    alert('¡Formulario enviado exitosamente! Nos pondremos en contacto pronto.')
+
+    // Limpiar el formulario después del envío exitoso
+    formData.nombre = ''
+    formData.institucion = ''
+    formData.email = ''
+    formData.telefono = ''
+    formData.mensaje = ''
+  } else {
+    alert(`Error al enviar el formulario: ${error.value}. Por favor, intenta nuevamente o contáctanos directamente a info@seguridadintegralhub.com`)
+  }
 }
 </script>
 
@@ -184,9 +188,14 @@ const handleSubmit = () => {
   transition: all 0.3s ease;
 }
 
-.form-submit:hover {
+.form-submit:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .form-privacy {
@@ -222,6 +231,12 @@ const handleSubmit = () => {
 .contacto-item:hover {
   border-color: var(--azul-medio);
   transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .cta-form {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {

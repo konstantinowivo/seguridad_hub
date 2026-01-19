@@ -1,21 +1,27 @@
 <template>
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-tag">✓ Consultoría Especializada</span>
-      <h1>
-        Protegé tu institución<br>
-        con seguridad real
-      </h1>
-      <p class="hero-subtitle">
-        Diagnóstico profesional, protocolos actualizados y acompañamiento técnico para instituciones que necesitan prevenir riesgos y fortalecer su seguridad.
-      </p>
-      <div class="hero-ctas">
-        <a href="#diagnostico" class="btn-primary">
-          Solicitar Diagnóstico Inicial →
-        </a>
-        <a href="#servicios" class="btn-secondary">
-          Ver Todos los Servicios
-        </a>
+      <div class="hero-text">
+        <span class="hero-tag">✓ Consultoría Especializada</span>
+        <h1>
+          Protegé tu institución<br>
+          con seguridad real
+        </h1>
+        <p class="hero-subtitle">
+          Diagnóstico profesional, protocolos actualizados y acompañamiento técnico para instituciones que necesitan prevenir riesgos y fortalecer su seguridad.
+        </p>
+        <div class="hero-ctas">
+          <a href="#diagnostico" class="btn-primary">
+            Solicitar Diagnóstico Inicial →
+          </a>
+          <a href="#servicios" class="btn-secondary">
+            Ver Todos los Servicios
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-logo">
+        <img src="/resources/logo_seguridad_hub_sin_fondo.png" alt="Seguridad Hub Logo" />
       </div>
     </div>
   </section>
@@ -28,7 +34,7 @@
 .hero {
   background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--lila) 100%);
   color: white;
-  padding: 120px 0 100px;
+  padding: 31px 0 90px;
   position: relative;
   overflow: hidden;
 }
@@ -56,11 +62,44 @@
 }
 
 .hero-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-tag {
@@ -142,9 +181,20 @@
   border-color: rgba(255,255,255,0.5);
 }
 
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-logo {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 60px;
+    padding: 20px 0 50px;
   }
 
   .hero h1 {
@@ -163,6 +213,10 @@
   .btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+
+  .hero-logo img {
+    max-width: 300px;
   }
 }
 </style>

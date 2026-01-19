@@ -2,7 +2,7 @@
   <section class="sobre-laura">
     <div class="sobre-grid">
       <div class="sobre-imagen">
-        [Foto profesional de Laura]
+        <img src="/resources/daniela.png" alt="Laura Daniela Florido" class="foto-daniela" />
       </div>
       <div class="sobre-content">
         <h2>Laura Daniela Florido</h2>
@@ -72,8 +72,14 @@ const credenciales = [
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  opacity: 0.7;
+  overflow: hidden;
+}
+
+.foto-daniela {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .sobre-content h2 {
