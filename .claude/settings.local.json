@@ -5,7 +5,11 @@
       "Bash(npm install)",
       "Read(//c/Users/PC/Desktop/development_jobs/AGHR_proyect/**)",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "WebFetch(domain:konstantinowivo.github.io)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
