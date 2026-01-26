@@ -2,7 +2,7 @@
   <section class="sobre-laura">
     <div class="sobre-grid">
       <div class="sobre-imagen">
-        <img src="/resources/daniela.png" alt="Laura Daniela Florido" class="foto-daniela" />
+        <img src="/resources/daniela_seguridad_hub.png" alt="Laura Daniela Florido" class="foto-daniela" />
       </div>
       <div class="sobre-content">
         <h2>Laura Daniela Florido</h2>
